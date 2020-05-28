@@ -45,7 +45,7 @@ double calcular_promedio_ver_or(var hh, int numero, int ind){
 }
 
 double calcular_promedio_ver_mod(var hh, int numero, int ind){ //Se creo una segunda funcion de promedio para capturar los datos de la prueba de historia (no se puede hacer de la misma manera que los otros datos)
-  var dato = new List(1000); //Creamos una lista lo suficientemente grande para almacenar todos los datos
+  var dato = new List(10000000); //Creamos una lista lo suficientemente grande para almacenar todos los datos
   int gg = 0; //Numero de resultados de historia, inicializado en 0
   var datos = [1];
   while(ind < numero){
@@ -94,7 +94,7 @@ double calcular_desv_est_ver_or(var hh, int nn, int indice, double prom){
 }
 
 double calcular_desv_est_ver_mod(var hh, int numero, int ind, double promedio){
-  var dato = new List(1000); //Se repite el proceso de obtencion de datos de la funcion calcular_promedio_ver_mod (lineas 48-64)
+  var dato = new List(10000000); //Se repite el proceso de obtencion de datos de la funcion calcular_promedio_ver_mod (lineas 48-64)
   int gg = 0;
   var datos = [1];
   while(ind < numero){
@@ -165,7 +165,7 @@ double calcular_mediana_ver_or(var ff, int numero, int ind){
 }
 
 double calcular_mediana_ver_mod(var hh, int numero, int ind){
-  var dato = new List(1000); //Se repite el proceso de obtencion de datos de la funcion calcular_promedio_ver_mod (lineas 48-64)
+  var dato = new List(10000000); //Se repite el proceso de obtencion de datos de la funcion calcular_promedio_ver_mod (lineas 48-64)
   int gg = 0;
   int contador = 0;
   var datos = [1];
@@ -277,7 +277,7 @@ int calcular_moda_ver_or(var datos, int numer, int ind){
 }
 
 int calcular_moda_ver_mod(var hh, int numero, int ind){
-  var dato = new List(1000); //Se repite el proceso de obtencion de datos de la funcion calcular_promedio_ver_mod (lineas 48-64)
+  var dato = new List(10000000); //Se repite el proceso de obtencion de datos de la funcion calcular_promedio_ver_mod (lineas 48-64)
   int gg = 0;
   var datos = [1];
   int contador_p = 0;
