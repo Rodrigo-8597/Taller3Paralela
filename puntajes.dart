@@ -88,7 +88,7 @@ void calcular_moda(var datos, int numer, int ind){
   var moda = ""; //Variable que guardara la(s) moda(s), puede haber mas de una
   var repeticion = [0]; //Array que guardara el numero de veces que se repite cada dato encontrado
   int mas_alto = 1; //Variable que almacenara la cantidad maxima de oportunidades que se repite un numero
-  //var modas = [1];
+  var modas = [1];
   for(int e = ind; e < numer; e = e + 7){
     int contador_letras = 0; //Esta variable permite calcular el numero de veces que se repite cada dato unico (Xi)
     for(int w = ind; w < numer; w = w + 7){
@@ -105,40 +105,33 @@ void calcular_moda(var datos, int numer, int ind){
       mas_alto = repeticion[rr].toInt(); //Si los condicionantes del if son verdaderos, entonces se ha encontrado un valor de repeticiones mas alto, dicho valor se almacena en la variable mas_alto
     }
   }
-  //int nun = 1;
+  int nun = 1; //Nun sirve para conocer si existe mas de una moda (en caso de que esta variable sea mayor que uno)
   for(int mm = 1; mm < repeticion.length; mm++){ //Si hay varios valores (mas de uno) que se repiten la misma cantidad de ocasiones, entonces se guardaran en una sola variable
     if(repeticion[mm] == mas_alto){
-      int indice = ((mm-1)*7) + ind; 
-      var hg = datos[indice].toString();
-      moda += hg;
-      break; //El break se ejecuta en caso que exista mas de una moda, y que solo se quiere elegir la primera que encuentre el algoritmo
-      //var hg = int.parse(datos[indice]);
-      /*
+      int indice = ((mm-1)*7) + ind;
+      var hg = int.parse(datos[indice]);
       if(nun == 1){
         modas.add(hg);
         nun++;
       }
       if(nun > 1){
-        int var_random = 0;
+        int var_random = 0; //var_random sirve para distingir cuando aparece una nuevo dato considerado como moda (ya que un valor cualquiera se repite mas de una vez)
         for(int jj = 1; jj < modas.length; jj++){
-          if(modas[jj] == hg){
-            var_random = 1;
+          if(modas[jj] == hg){ //Esta operacion compara si el dato se encuentra repetido, si eso ocurre, entonces var_random adopta un 1 como valor
+            var_random = 1; //Esto evita que la terminal imprima un mismo dato varias veces (ej: Moda: 600 600 600)
           }
         }
-        if(var_random == 0){
+        if(var_random == 0){ //Si el valor original de var_random no se altera, entonces se ha encontrado otra moda
           modas.add(hg);
           nun++;
         }
       }
-      */
     }
   }
-  /*
   for(int rt = 1; rt < modas.length; rt++){
-    moda += modas[rt].toString();
+    moda += modas[rt].toString(); //Concatenamos todas las modas encontradas, para asi mostrarlas en pantallas como un string
     moda += " ";
   }
-  */
   print('Moda: $moda');
 }
 
