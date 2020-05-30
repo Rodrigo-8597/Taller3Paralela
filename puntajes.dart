@@ -12,7 +12,7 @@ void main(){
       double desviacion_est = calcular_desv_est(separar,tt,bb,promedio); //Variable que guardara la desviacion estandar de los nems hasta el de los resultados en historia
       double mediana = calcular_mediana(separar,tt,bb); //Variable que guardara la mediana de los nems hasta la mediana de los resultados en historia
       mostrar(bb,promedio,desviacion_est,mediana); //Funcion que mostrara en pantalla los resultados anteriores
-      calcular_moda(separar,tt,bb);
+      calcular_moda(separar,tt,bb); //La moda se mostrara por separado al ser una funcion void
     }
     integrantes();
   }); 
@@ -111,7 +111,7 @@ void calcular_moda(var datos, int numer, int ind){
       int indice = ((mm-1)*7) + ind; 
       var hg = datos[indice].toString();
       moda += hg;
-      break;
+      break; //El break se ejecuta en caso que exista mas de una moda, y que solo se quiere elegir la primera que encuentre el algoritmo
       //var hg = int.parse(datos[indice]);
       /*
       if(nun == 1){
@@ -142,7 +142,7 @@ void calcular_moda(var datos, int numer, int ind){
   print('Moda: $moda');
 }
 
-void mostrar(int posicion, double prom, double des, double med){ //Funcion void que mostrara los resultados obtenidos solicitados
+void mostrar(int posicion, double prom, double des, double med){ //Funcion void que mostrara los resultados obtenidos solicitados (a excepcion de la moda)
   if(posicion == 1){
     print('=== Nem ===');
   }
